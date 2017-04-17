@@ -7,16 +7,29 @@
 //
 
 #import "ViewController.h"
-
+#import "LoginVC.h"
 @interface ViewController ()
-
+{
+    UINavigationController *mRootNavigationController;
+}
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.navigationBarHidden = YES;
+    
+    if (mRootNavigationController == nil)
+    {
+        LoginVC* mLoginVC = [[LoginVC alloc] init];
+        mRootNavigationController = [[UINavigationController alloc] initWithRootViewController:mLoginVC];
+        [mRootNavigationController setNavigationBarHidden:YES];
+        
+    }
+    mRootNavigationController.view.frame = self.view.frame;
+    
+    [self.view addSubview:mRootNavigationController.view];
 }
 
 

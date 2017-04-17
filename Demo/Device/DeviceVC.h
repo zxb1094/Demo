@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface DeviceVC : BaseViewController
-
+@property(nonatomic,assign) BOOL isAdd;
+@property(nonatomic,strong) NSData* gRoomID;
 @end

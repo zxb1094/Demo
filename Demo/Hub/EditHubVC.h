@@ -9,5 +9,7 @@
 #import "BaseViewController.h"
 
 @interface EditHubVC : BaseViewController
-
+@property(nonatomic,strong) HubInfo* hubInfo;
+@property(nonatomic,strong) NSString* hubAddress;
+@property(nonatomic,assign) BOOL isAdd;
 @end

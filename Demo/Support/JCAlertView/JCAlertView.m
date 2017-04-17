@@ -25,7 +25,7 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
 #define JCAlertViewTitleColor JCColor(255, 255, 255)
 #define JCAlertViewTitleFont [UIFont boldSystemFontOfSize:20]
 #define JCAlertViewContentColor JCColor(0x1b, 0x1b, 0x1b)
-#define JCAlertViewContentFont [UIFont fontWithName:FONT_PING_FANG_SC_LIGHT size:13]
+#define JCAlertViewContentFont [UIFont systemFontOfSize:13]
 #define JCAlertViewContentHeight (JCAlertViewHeight - JCAlertViewTitleLabelHeight - JCButtonHeight - JCMargin * 2)
 #define JCiOS7OrLater ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
 
@@ -615,13 +615,10 @@ buttonType ButtonTitle:(NSString *)buttonTitle Click:(clickHandle)click ButtonTy
         
         if (self.gTextField == nil)
         {
-            self.gTextField = [[UITextField alloc] initWithFrame:CGRectMake(16*WIDTH_PROPORTION, contentLabel.frame.size.height+contentLabel.frame.origin.y-32, JCAlertViewWidth - 32*WIDTH_PROPORTION, 35)];
+            self.gTextField = [[UITextField alloc] initWithFrame:CGRectMake(16, contentLabel.frame.size.height+contentLabel.frame.origin.y-32, JCAlertViewWidth - 32, 35)];
             self.gTextField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.gTextField.placeholder = self.placeholder;
-            if ([self.placeholder isEqualToString:NSLocalizedString(PLACHOLDER_ENTER_A_PERCENTAG_VALUE, nil)])
-            {
-                [self.gTextField setKeyboardType:UIKeyboardTypeNumberPad];
-            }
+            
             self.gTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15.5, 0)];
             self.gTextField.leftViewMode = UITextFieldViewModeAlways;
             self.gTextField.layer.borderWidth = 1.0f;
@@ -638,7 +635,7 @@ buttonType ButtonTitle:(NSString *)buttonTitle Click:(clickHandle)click ButtonTy
             NSDictionary *btnDict = self.buttons[i];
             [btn setTitle:[btnDict.allValues firstObject] forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor colorWithRed:0x1b green:0x1b blue:0x1b alpha:1] forState:UIControlStateNormal];
-            [btn.titleLabel setFont:[UIFont fontWithName:FONT_PING_FANG_SC_MEDIUM size:17]];
+            [btn.titleLabel setFont:[UIFont systemFontOfSize:17]];
             [self setButton:btn BackgroundWithButonType:[[btnDict.allKeys firstObject] integerValue]];
             [self addSubview:btn];
             btn.tag = i;

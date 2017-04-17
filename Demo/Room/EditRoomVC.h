@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface EditRoomVC : BaseViewController
-
+@property(nonatomic,strong) RoomInfo* room;
+@property(nonatomic,assign) BOOL isAdd;
 @end

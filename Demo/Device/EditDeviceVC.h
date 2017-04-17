@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface EditDeviceVC : BaseViewController
-
+@property(nonatomic,strong) DeviceInfo* deviceInfo;
+@property(nonatomic,assign) BOOL isAdd;
 @end

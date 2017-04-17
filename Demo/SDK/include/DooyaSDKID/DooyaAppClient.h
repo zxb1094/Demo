@@ -31,6 +31,11 @@ typedef NS_ENUM(NSInteger, OpenSdkErrorCode) {
      * 服务器错误
      */
     Open_Sdk_Cloud_Error                         = 90001,
+    
+    /*
+     * 获取用户信息失败
+     */
+    Open_Sdk_GetUser_Error                       = -1111,
 };
 
 @interface DooyaAppClient : NSObject
@@ -47,11 +52,9 @@ typedef NS_ENUM(NSInteger, OpenSdkErrorCode) {
 /**
  *	@brief	SDK初始化
  *
- *  @para   customCode 客户代号
- *
  *	@since v2.0.0
  */
--(void)dooyaUISDKInitWithCustomCode:(NSInteger) customCode;
+-(void)dooyaUISDKInit;
 
 /**
  *	@brief	SDK注册推送DeviceToken

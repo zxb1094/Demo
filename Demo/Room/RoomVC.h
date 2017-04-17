@@ -7,7 +7,12 @@
 //
 
 #import "BaseViewController.h"
+@protocol dooyaUISetDeviceRoomDelegate <NSObject>
 
+-(void)dooyaUISetDeviceRoom:(RoomInfo*) room;
+
+@end
 @interface RoomVC : BaseViewController
-
+@property(nonatomic,assign) BOOL isAdd;
+@property(weak, nonatomic) id <dooyaUISetDeviceRoomDelegate> delegate;
 @end
